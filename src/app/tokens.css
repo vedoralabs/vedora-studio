@@ -1,0 +1,61 @@
+:root {
+  color-scheme: dark;
+
+  /* Brand palette: adjust these semantic values to re-skin the studio. */
+  --color-canvas: #111110;
+  --color-surface: #191917;
+  --color-surface-raised: #22211f;
+  --brand-foreground: #eeece6;
+  --color-secondary: #c7c2b9;
+  --color-muted: #a49f96;
+  --color-rule: #3a3834;
+  --color-image-edge: rgb(255 255 255 / 8%);
+  --color-accent: #bd9072;
+  --color-focus: #e5b99a;
+
+  --font-display: "Baskerville", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-interface: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+  --space-11: 10rem;
+  --space-12: 14rem;
+  --header-height: 5.5rem;
+  --header-height-mobile: 4.75rem;
+  --control-height: 2.875rem;
+  --control-padding-inline: 1.125rem;
+
+  --page-gutter: clamp(1.25rem, 5vw, 6.5rem);
+  --container-wide: 100rem;
+  --container-copy: 42rem;
+  --grid-gap: clamp(1rem, 2.4vw, 2.25rem);
+  --section-space: clamp(5rem, 11vw, 11rem);
+
+  --type-display: clamp(5rem, 13.4vw, 12.5rem);
+  --type-hero: clamp(3.25rem, 8.7vw, 8rem);
+  --type-h1: clamp(2.75rem, 6vw, 5.5rem);
+  --type-h2: clamp(2.125rem, 4.4vw, 4rem);
+  --type-h3: clamp(1.375rem, 2.2vw, 2rem);
+  --type-body: 1rem;
+  --type-small: 0.875rem;
+  --type-caption: 0.6875rem;
+  --type-navigation: 0.6875rem;
+  --type-metadata: 0.625rem;
+  --type-eyebrow: 0.625rem;
+}
+
+@theme inline {
+  --color-background: var(--color-canvas);
+  --color-foreground: var(--brand-foreground);
+  --font-sans: var(--font-interface);
+  --font-serif: var(--font-display);
+}
+
