@@ -43,13 +43,26 @@ export async function runStructured<T>({ feature, system, user, schema, maxOutpu
 
     const result = validate<T>(schema, parsed);
     if (!result.ok) throw new AiProviderError(`Response failed validation: ${result.error}`, "invalid-response");
-    return { status: "ok", value: result.value };
+    return { status: "ok", value: toPlainText(result.value) as T };
   } catch (error) {
     const reason = error instanceof AiProviderError ? error.kind : "unavailable";
     // Log the category only — never visitor input or model output.
     console.warn(`[vedora-ai] ${feature} fell back to curated results (${reason}, ${provider.id})`);
     return { status: "failed", reason };
   }
+}
+
+/**
+ * Defense in depth: model text is always rendered as text by React, but markup is stripped
+ * here too so it can never reach a webhook, email, or future renderer as HTML.
+ */
+function toPlainText(value: unknown): unknown {
+  if (typeof value === "string") return value.replace(/<[^>]*>/g, "").replace(/\s{2,}/g, " ").trim();
+  if (Array.isArray(value)) return value.map(toPlainText);
+  if (value && typeof value === "object") {
+    return Object.fromEntries(Object.entries(value).map(([key, child]) => [key, toPlainText(child)]));
+  }
+  return value;
 }
 
 /** Wrap visitor-supplied text so the model treats it as data, never as instructions. */
