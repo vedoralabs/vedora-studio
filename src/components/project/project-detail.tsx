@@ -4,7 +4,12 @@ import { ProjectGallery } from "@/components/project/project-gallery";
 import { ProjectInquiry } from "@/components/project/project-inquiry";
 import { ProjectMetadata } from "@/components/project/project-metadata";
 import { ProjectNavigation } from "@/components/project/project-navigation";
+import { RelatedProjects } from "@/components/project/related-projects";
+import { ProjectStoryteller } from "@/components/intelligence/project-storyteller";
+import { ProjectViewTracker } from "@/components/intelligence/project-view-tracker";
 import { ProjectMedia } from "@/components/ui/project-media";
+import { JsonLd } from "@/components/seo/json-ld";
+import { siteConfig } from "@/lib/site-config";
 import type { PhotographyProject } from "@/types/project";
 
 interface ProjectDetailProps {
@@ -16,6 +21,21 @@ interface ProjectDetailProps {
 export function ProjectDetail({ project, previous, next }: ProjectDetailProps) {
   return (
     <article className="project-page">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "CreativeWork",
+          name: project.title,
+          description: project.description,
+          genre: project.discipline ?? project.category,
+          image: new URL(project.coverImage.src, siteConfig.url).toString(),
+          url: new URL(`/work/${project.slug}`, siteConfig.url).toString(),
+          creator: { "@type": "Organization", name: siteConfig.name },
+          keywords: project.facets.keywords.join(", "),
+          // Demonstration studies are labelled as such for machines as well as people.
+          ...(project.fictional ? { creativeWorkStatus: "Fictional demonstration study" } : { dateCreated: String(project.year) }),
+        }}
+      />
       <header className="project-intro">
         <Container>
           <Link className="project-back text-link" href="/work"><span aria-hidden="true">←</span> Back to work</Link>
@@ -48,9 +68,12 @@ export function ProjectDetail({ project, previous, next }: ProjectDetailProps) {
       <ProjectGallery projectTitle={project.title} sections={project.gallery} />
 
       <Container>
+        <ProjectStoryteller slug={project.slug} title={project.title} />
+        <RelatedProjects project={project} />
         <ProjectNavigation next={next} previous={previous} />
-        <ProjectInquiry projectTitle={project.title} />
+        <ProjectInquiry projectSlug={project.slug} projectTitle={project.title} />
       </Container>
+      <ProjectViewTracker category={project.category} slug={project.slug} />
     </article>
   );
 }

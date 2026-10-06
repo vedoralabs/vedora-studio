@@ -2,9 +2,9 @@ import { Container, Section } from "@/components/layout/layout-primitives";
 
 export function About() {
   return (
-    <Section aria-labelledby="about-title" className="about" id="about" spacing="compact">
+    <Section aria-labelledby="about-title" className="about" id="studio" spacing="compact">
       <Container className="about__layout">
-        <p className="eyebrow">About Vedora</p>
+        <p className="eyebrow">The studio</p>
         <div className="about__copy" data-motion-reveal="">
           <h2 className="heading-two" id="about-title">Attention is its own kind of artistry.</h2>
           <p className="copy">

@@ -24,7 +24,7 @@ export function SiteFooter() {
           {siteConfig.contactEmail ? (
             <a className="text-link" href={`mailto:${siteConfig.contactEmail}`} id="studio-contact">Email the studio <span aria-hidden="true">↗</span></a>
           ) : (
-            <p id="studio-contact">Contact details can be connected when the studio information is confirmed.</p>
+            <Link className="text-link" href="/contact" id="studio-contact">Begin a project <span aria-hidden="true">↗</span></Link>
           )}
         </div>
       </div>

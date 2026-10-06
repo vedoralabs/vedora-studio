@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/layout/layout-primitives";
 import { ProjectPreview } from "@/components/ui/project-preview";
+import { ExploredRail } from "@/components/intelligence/explored-rail";
 import { WorkArchive } from "@/components/work/work-archive";
 import { projects } from "@/content/projects";
 import { siteConfig } from "@/lib/site-config";
@@ -51,10 +52,12 @@ export default function WorkPage() {
               imageAspectRatio={index % 3 === 2 ? "5 / 4" : index % 2 === 0 ? "4 / 5" : "3 / 4"}
               imageSizes="(max-width: 700px) 90vw, (max-width: 1000px) 60vw, 46vw"
               key={project.slug}
+              preloadImage={index === 0}
               project={project}
             />
           ))}
         </WorkArchive>
+        <ExploredRail />
       </Container>
     </div>
   );

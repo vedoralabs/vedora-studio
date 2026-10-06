@@ -26,7 +26,7 @@ export function ProjectPreview({
   const Heading = headingLevel === 2 ? "h2" : "h3";
 
   return (
-    <article aria-labelledby={headingId} className={articleClassName} data-project-category={project.category}>
+    <article aria-labelledby={headingId} className={articleClassName} data-project-category={project.category} data-project-slug={project.slug}>
       <Link aria-labelledby={headingId} className="project-preview__link" data-cursor="view" href={href}>
         <ProjectMedia
           alt={project.coverImage.alt}

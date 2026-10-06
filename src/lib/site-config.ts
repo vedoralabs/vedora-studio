@@ -10,7 +10,9 @@ export const siteConfig = {
   locale: "en_US",
   navigation: [
     { label: "Work", href: "/work" },
-    { label: "About", href: "/#about" },
-    { label: "Contact", href: "/#contact" },
+    { label: "Studio", href: "/#studio" },
+    { label: "Services", href: "/#services" },
+    { label: "Intelligence", href: "/intelligence" },
+    { label: "Contact", href: "/contact" },
   ],
 } as const;

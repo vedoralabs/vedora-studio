@@ -11,9 +11,15 @@ export function FinalCta() {
           <br />
           story <em>take shape.</em>
         </h2>
-        <StudioLink className="final-cta__link" data-cursor="link" data-magnetic="" href="#studio-contact">
-          Start a conversation <span aria-hidden="true">↗</span>
-        </StudioLink>
+        <div className="final-cta__links" data-motion-reveal="">
+          <StudioLink className="final-cta__link" data-cursor="link" data-magnetic="" href="/contact">
+            Start a conversation <span aria-hidden="true">↗</span>
+          </StudioLink>
+          <p className="final-cta__aside small-copy">
+            Have an idea, but not the words yet?{" "}
+            <StudioLink href="/intelligence#concierge">Tell us, and we&apos;ll help shape it <span aria-hidden="true">↗</span></StudioLink>
+          </p>
+        </div>
         <span aria-hidden="true" className="metadata final-cta__index">VEDORA / STUDIO</span>
       </Container>
     </Section>

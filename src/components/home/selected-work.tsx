@@ -35,7 +35,7 @@ export function SelectedWork() {
         <div className="selected-work__endnote" data-motion-reveal="">
           <span className="metadata">Fictional portfolio studies</span>
           <span aria-hidden="true" className="selected-work__rule" />
-          <span className="metadata">Weddings · Fashion</span>
+          <span className="metadata">Weddings · Fashion · and four more</span>
           <StudioLink href="/work">View all work <span aria-hidden="true">↗</span></StudioLink>
         </div>
       </Container>

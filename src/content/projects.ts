@@ -4,7 +4,7 @@ import type { PhotographyProject } from "@/types/project";
  * Fictional sample work and generated local demo photography only.
  * Facets describe what is visible in each photograph so search and recommendations stay grounded in real content.
  */
-export const projects = [
+export const projects: readonly PhotographyProject[] = [
   {
     slug: "the-quiet-vow",
     title: "The Quiet Vow",
@@ -249,7 +249,7 @@ export const projects = [
     ],
     fictional: true,
   },
-] satisfies readonly PhotographyProject[];
+];
 
 export function getProjectBySlug(slug: string): PhotographyProject | undefined {
   return projects.find((project) => project.slug === slug);

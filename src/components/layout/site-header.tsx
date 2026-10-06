@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SiteNav } from "@/components/layout/site-nav";
 import { siteConfig } from "@/lib/site-config";
 
 export function SiteHeader() {
@@ -7,11 +8,7 @@ export function SiteHeader() {
       <Link aria-label="Vedora Studio home" className="wordmark" href="/">
         {siteConfig.brand}
       </Link>
-      <nav aria-label="Main navigation" className="site-nav">
-        {siteConfig.navigation.map((item) => (
-          <Link href={item.href} key={item.href}>{item.label}</Link>
-        ))}
-      </nav>
+      <SiteNav items={siteConfig.navigation} />
     </header>
   );
 }

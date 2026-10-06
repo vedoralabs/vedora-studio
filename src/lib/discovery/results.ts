@@ -57,12 +57,23 @@ export interface DiscoverResult {
   readonly nextStep: string;
 }
 
+const categoryNoun: Readonly<Record<ProjectCategory, string>> = {
+  Weddings: "A wedding study",
+  Fashion: "A fashion study",
+  Commercial: "A commercial study",
+  Editorial: "An editorial study",
+  Architecture: "An architecture study",
+  Product: "A still-life study",
+};
+
 export function describeMatch(match: ProjectMatch): string {
-  const { project, reasons } = match;
-  if (reasons.length === 0) return project.description;
-  const lowered = reasons.slice(0, 3).map((reason) => reason.toLowerCase());
-  const listed = lowered.length > 1 ? `${lowered.slice(0, -1).join(", ")} and ${lowered[lowered.length - 1]}` : lowered[0];
-  return `Shares the ${listed} you described.`;
+  const { project } = match;
+  const qualities = match.reasons.filter((reason) => reason !== project.category).slice(0, 3).map((reason) => reason.toLowerCase());
+  if (qualities.length === 0) {
+    return match.reasons.includes(project.category) ? `${categoryNoun[project.category]}, as you asked.` : project.description;
+  }
+  const listed = qualities.length > 1 ? `${qualities.slice(0, -1).join(", ")} and ${qualities[qualities.length - 1]}` : qualities[0];
+  return `${categoryNoun[project.category]} with the ${listed} you described.`;
 }
 
 export function summariseMatch(match: ProjectMatch, why?: string): MatchSummary {

@@ -329,11 +329,11 @@ export function composeDirection(intent: DiscoveryIntent, matches: readonly Proj
     headline,
     summary: `${qualitySentence}${avoidSentence}`,
     lighting: lighting.length > 0
-      ? capitalize(joinNatural(lighting.map((value) => lightingCopy[value].phrase))) + "."
+      ? lighting.map((value) => `${capitalize(lightingCopy[value].phrase)}.`).join(" ")
       : "Natural light first, shaped on location rather than added.",
     palette: palette.map((value) => paletteCopy[value]),
     composition: composition.length > 0
-      ? capitalize(joinNatural(composition.map((value) => compositionCopy[value].phrase))) + "."
+      ? composition.map((value) => `${capitalize(compositionCopy[value].phrase)}.`).join(" ")
       : "A sequence that moves between wide context and close detail.",
   };
 }
