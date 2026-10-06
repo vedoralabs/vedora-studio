@@ -1,6 +1,9 @@
 import type { PhotographyProject } from "@/types/project";
 
-/** Fictional sample work and generated local demo photography only. */
+/**
+ * Fictional sample work and generated local demo photography only.
+ * Facets describe what is visible in each photograph so search and recommendations stay grounded in real content.
+ */
 export const projects = [
   {
     slug: "the-quiet-vow",
@@ -11,6 +14,17 @@ export const projects = [
     description: "An intimate celebration shaped by warm light, family ritual, and unhurried moments.",
     caption: "An evening held in candlelight.",
     discipline: "Wedding reportage",
+    facets: {
+      subjects: ["couple", "wedding dinner", "table setting", "garden path", "villa"],
+      qualities: ["cinematic", "intimate", "warm", "nostalgic"],
+      moods: ["romantic", "tender", "timeless", "convivial"],
+      lighting: ["dusk", "candlelight", "golden-hour"],
+      palette: ["candle-gold", "ivory", "warm-earth"],
+      composition: ["environmental", "detail", "layered-depth"],
+      locationType: ["villa-garden", "dining-room"],
+      keywords: ["wedding", "tuscany", "italy", "cypress", "candles", "reception", "olive", "linen", "celebration", "family"],
+      services: ["photography"],
+    },
     coverImage: {
       src: "/images/projects/the-quiet-vow.jpg",
       alt: "A couple walking a garden path beneath cypress trees toward a softly lit villa at dusk",
@@ -43,6 +57,17 @@ export const projects = [
     year: 2025,
     description: "A study of sculptural silhouettes, tactile fabric, and the quiet energy between frames.",
     discipline: "Fashion editorial",
+    facets: {
+      subjects: ["model", "gown", "silk", "stone architecture"],
+      qualities: ["cinematic", "dramatic", "editorial", "warm"],
+      moods: ["sensual", "timeless"],
+      lighting: ["golden-hour", "hard-sun"],
+      palette: ["burgundy", "warm-earth", "candle-gold"],
+      composition: ["movement", "environmental", "detail", "portrait"],
+      locationType: ["historic-courtyard", "terrace"],
+      keywords: ["fashion", "silhouette", "fabric", "couture", "gown", "dress", "stone", "shadow", "campaign", "movement"],
+      services: ["photography", "creative-direction"],
+    },
     coverImage: {
       src: "/images/projects/form-in-motion-sample.jpg",
       alt: "A model in a sculptural burgundy dress crossing a stone courtyard at golden hour",
@@ -77,6 +102,17 @@ export const projects = [
     year: 2024,
     description: "Quiet still life studies that bring everyday objects, handmade surfaces, and natural light into focus.",
     discipline: "Still life & product",
+    facets: {
+      subjects: ["ceramics", "vase", "cup", "linen", "olive branch"],
+      qualities: ["minimal", "warm", "editorial"],
+      moods: ["quiet", "serene", "contemplative"],
+      lighting: ["window-light", "dappled"],
+      palette: ["ivory", "celadon", "warm-earth"],
+      composition: ["still-life", "negative-space", "detail"],
+      locationType: ["studio"],
+      keywords: ["product", "still life", "handmade", "craft", "texture", "tableware", "objects", "materials", "e-commerce", "brand"],
+      services: ["photography", "creative-direction"],
+    },
     coverImage: {
       src: "/images/projects/objects-of-use.png",
       alt: "A handmade celadon ceramic vase and cup resting on warm limestone in window light",
@@ -101,6 +137,17 @@ export const projects = [
     year: 2024,
     description: "A quiet study of timber, filtered light, and the human scale of a contemplative interior.",
     discipline: "Architecture & interiors",
+    facets: {
+      subjects: ["interior", "timber", "chair", "corridor", "garden", "stone basin"],
+      qualities: ["architectural", "minimal", "cinematic", "warm"],
+      moods: ["contemplative", "serene", "quiet"],
+      lighting: ["window-light", "dappled"],
+      palette: ["walnut", "warm-earth", "ivory"],
+      composition: ["layered-depth", "negative-space", "environmental"],
+      locationType: ["traditional-interior"],
+      keywords: ["architecture", "interiors", "japan", "japanese", "kyoto", "timber", "wood", "shoji", "moss", "garden", "space", "design"],
+      services: ["photography"],
+    },
     coverImage: {
       src: "/images/projects/a-place-to-pause.png",
       alt: "A quiet timber interior with a sculptural chair in patterned morning light",
@@ -133,6 +180,17 @@ export const projects = [
     year: 2024,
     description: "A fictional hospitality study around the small rituals, shared plates, and soft pauses of a meal.",
     discipline: "Hospitality campaign",
+    facets: {
+      subjects: ["table setting", "food", "ceramics", "hands", "citrus", "candles"],
+      qualities: ["warm", "editorial", "intimate"],
+      moods: ["convivial", "quiet"],
+      lighting: ["candlelight", "window-light"],
+      palette: ["walnut", "candle-gold", "terracotta", "ivory"],
+      composition: ["overhead", "detail", "environmental"],
+      locationType: ["dining-room"],
+      keywords: ["hospitality", "restaurant", "food", "dining", "supper", "meal", "campaign", "brand", "commercial", "interiors"],
+      services: ["photography", "creative-direction", "visual-production"],
+    },
     coverImage: {
       src: "/images/projects/the-new-table.png",
       alt: "A linen-covered supper table set with handmade ceramics and candlelight beside a London window",
@@ -164,6 +222,17 @@ export const projects = [
     year: 2023,
     description: "A fictional editorial framed by open shade, weathered color, and the quiet geometry of the city.",
     discipline: "Portrait & editorial",
+    facets: {
+      subjects: ["portrait", "woman", "silk dress", "tailoring", "rooftops", "street"],
+      qualities: ["editorial", "warm", "nostalgic", "cinematic"],
+      moods: ["timeless", "serene", "contemplative"],
+      lighting: ["open-shade", "golden-hour"],
+      palette: ["terracotta", "ivory", "sea-blue"],
+      composition: ["portrait", "environmental", "layered-depth"],
+      locationType: ["city-street", "terrace"],
+      keywords: ["portrait", "portraiture", "lisbon", "portugal", "city", "street", "shutters", "plaster", "travel", "magazine"],
+      services: ["photography", "creative-direction"],
+    },
     coverImage: {
       src: "/images/projects/soft-geometry.png",
       alt: "A woman in an ivory silk dress standing beside faded terracotta plaster and green shutters in Lisbon",
